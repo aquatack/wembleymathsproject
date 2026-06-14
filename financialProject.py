@@ -12,13 +12,13 @@ def calculateIncome():
                     3:10000,
                     4:20000}  
         
-        def Band1PriceOptions():
+        def GetBand1PriceOptions():
             return {50: 100, 65:85, 90:60, 100:40, 110:20, 120:10}  # Price to percentage mapping for Band 1 tickets
-        def Band2PriceOptions():
+        def GetBand2PriceOptions():
             return {40: 100, 50:85, 75:60, 80:40, 90:20, 100:10}  # Price to percentage mapping for Band 2 tickets
-        def Band3PriceOptions():
+        def GetBand3PriceOptions():
             return {25: 100, 40:85, 60:60, 70:40, 85:20, 100:10}  # Price to percentage mapping for Band 3 tickets
-        def Band4PriceOptions():
+        def GetBand4PriceOptions():
             return {10: 100, 15:85, 35:60, 45:40, 50:20, 60:10}  # Price to percentage mapping for Band 4 tickets
         
         
@@ -26,10 +26,10 @@ def calculateIncome():
             salesPercentage = priceOptions.get(price, 0)  # Get the percentage of tickets sold for the given price   
             return price * (salesPercentage / 100) * availableSeats  # Calculate sales based on available seats
 
-        band1Sales = CalculateBandSales(50, Band1PriceOptions(), SeatsAvailable()[1])
-        band2Sales = CalculateBandSales(40, Band2PriceOptions(), SeatsAvailable()[2])
-        band3Sales = CalculateBandSales(25, Band3PriceOptions(), SeatsAvailable()[3])
-        band4Sales = CalculateBandSales(10, Band4PriceOptions(), SeatsAvailable()[4])
+        band1Sales = CalculateBandSales(50, GetBand1PriceOptions(), SeatsAvailable()[1])
+        band2Sales = CalculateBandSales(40, GetBand2PriceOptions(), SeatsAvailable()[2])
+        band3Sales = CalculateBandSales(25, GetBand3PriceOptions(), SeatsAvailable()[3])
+        band4Sales = CalculateBandSales(10, GetBand4PriceOptions(), SeatsAvailable()[4])
         ticketSales = band1Sales + band2Sales + band3Sales + band4Sales  # Add sales from all bands
         return ticketSales  # Placeholder value for ticket sales
 
